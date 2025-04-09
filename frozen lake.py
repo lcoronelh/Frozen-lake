@@ -5,7 +5,7 @@ import pickle
 
 def run(episodes, is_training, render):
 
-    env = gym.make('FrozenLake-v1', map_name="8x8", is_slippery=False, render_mode='human' if render else None)
+    env = gym.make('FrozenLake-v1', map_name="8x8", is_slippery=True, render_mode='human' if render else None)
 
     if(is_training):
         q = np.zeros((env.observation_space.n, env.action_space.n)) # init a 64 x 4 array
@@ -66,4 +66,4 @@ def run(episodes, is_training, render):
 if __name__ == '__main__':
     # run(15000)
 
-    run(15000, is_training=False, render=False)
+    run(15000, True, False)
